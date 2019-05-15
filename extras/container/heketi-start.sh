@@ -24,12 +24,12 @@ fail() {
 info "Setting up heketi database"
 
 # Ensure the data dir exists
-if [[ ! -d "${HEKETI_PATH}" ]]; then
-mkdir -p "${HEKETI_PATH}" 2>/dev/null
-if [[ $? -ne 0 && ! -d "${HEKETI_PATH}" ]]; then
-    fail "Failed to create ${HEKETI_PATH}"
-fi
-fi
+# if [[ ! -d "${HEKETI_PATH}" ]]; then
+# mkdir -p "${HEKETI_PATH}" 2>/dev/null
+# if [[ $? -ne 0 && ! -d "${HEKETI_PATH}" ]]; then
+#     fail "Failed to create ${HEKETI_PATH}"
+# fi
+# fi
 
 # Test that our volume is writable.
 touch "${HEKETI_PATH}/test" && rm "${HEKETI_PATH}/test"
